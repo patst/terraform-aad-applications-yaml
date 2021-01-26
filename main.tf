@@ -45,6 +45,7 @@ resource "azuread_application" "app-registrations" {
   }
 
   provisioner "local-exec" {
+    # Must be used because the terraform providers uses the legacy Azure AD Graph API which dies not support the SPA feature for auth code flow with PKCE
     command = "az rest --method PATCH --uri 'https://graph.microsoft.com/v1.0/applications/${self.object_id}' --headers 'Content-Type=application/json' --body '{\"spa\":{\"redirectUris\":[\"http://localhost:4200/index.html\"]}}'"
   }
 }
