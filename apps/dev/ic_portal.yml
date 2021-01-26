@@ -1,0 +1,16 @@
+name: example-terraform
+homepage: https://localhost:4200/index.html
+reply_urls:
+  - http://localhost:4200/index.html
+public_client: false
+required_resources_access:
+  - resource_app_id:  "00000003-0000-0000-c000-000000000000"
+    resource_access:
+      - id: e1fe6dd8-ba31-4d61-89e7-88639da4683d
+        type: Scope
+oauth2_permissions:
+  - admin_consent_description: "Allow the application to access example app on behalf of the signed-in user."
+    admin_consent_display_name: "Access the example application"
+    user_consent_description: "Allow the application to access example app on your behalf."
+    user_consent_display_name: "Access example app"
+    scope_name: "user_impersonation"
